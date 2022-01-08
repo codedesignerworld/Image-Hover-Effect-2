@@ -1,0 +1,123 @@
+body{
+	padding: 100px;
+}
+.box{
+    background: #7b410e;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0px 0px 10px black;
+}
+.box:before{
+    content: "";
+    background: #fff;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5) inset;
+    border-radius: 0 20px;
+    opacity: 0;
+    transform: perspective(1000px) rotateX(90deg);
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    transition: all 0.3s ease-in;
+}
+.box:hover:before{
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0);
+}
+.box img{
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease 0s;
+}
+.box:hover img{
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+.box .box-content{
+    color: #fff;
+    background: #562e0a;
+    text-align: center;
+    width: 80%;
+    padding: 15px 10px;
+    border-radius: 0 20px;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-200%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transition: all 0.3s ease-out;
+}
+.box:hover .box-content{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-60%);
+}
+.box .title{
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 0 0 5px;
+}
+.box .post{
+    font-size: 16px;
+    font-style: italic;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.box .icon{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    transition: all 0.3s ease 0s;
+}
+.box:hover .icon{
+    opacity: 1;
+    bottom: 20px;
+}
+.box .icon li{
+    display: inline-block;
+    margin: 0 5px;
+}
+.box .icon li a{
+    color: #fff;
+    background: #562e0a;
+    font-size: 14px;
+    text-align: center;
+    line-height: 38px;
+    width: 50px;
+    height: 38px;
+    outline-offset: -5px;
+    outline: 2px solid #fff;
+    display: block;
+    transition: all 0.35s ease 0s;
+}
+
+.box .icon li a:hover{
+    color: #7b410e;
+    background: #fff;
+    outline-color: #562e0a;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5) inset;
+}
+
+.box .icon li a:hover i{
+ 	background: #fff;
+    transition: all 0.3s ease 0s;
+ }
+ .box .icon li a:hover i{
+ 	transition: all 0.5s ease-out 0s;
+ 	transform: rotateZ(-315deg);
+ }
+@media only screen and (max-width:990px){
+    .box { margin: 0 0 30px; }
+}
